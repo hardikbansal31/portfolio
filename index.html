@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="port.css">
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img
+            src="portIMG/lamborghini_logo.png"
+            alt="cont/nav/img"
+            class="logo"
+          >
+          <ul id="side-menue">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <img src="hamburger.png" alt="Menue Icon" class="menuI" >
+          <img src="cross.png" alt="Close Menu" class="menuI">
+        </nav>
+        <div class="header-text">
+          <h1>Hi, I'm <span>Hardik,</span></h1>
+          <p>Aspiring to be a Web Developer.</p>
+        </div>
+      </div>
+    </div>
+    <!-- about -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="portIMG/aboutlambo.webp" alt="about-col-1 img" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+              Motivated and aspiring web developer with knowledge of web development technologies, data structures, and algorithms. Committed to contributing to project success and delivering high-quality, user-friendly web applications.
+            </p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skill')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('edu')">Education</p>
+              <p class="tab-links" onclick="opentab('exp')">Experience</p>
+            </div>
+            <div class="tab-contents active-tab" id="skill">
+              <ul>
+                <li><span>HTML, CSS & JavaScript</span></li>
+                <li><span>Basic Git Knowledge</span></li>
+                <li><span>Effective Communication</span></li>
+                <li><span>Java Programming</span></li>
+                <li><span>C Programming</span></li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="edu">
+              <!-- Education -->
+              <ul>
+                <li><span>B. E. COMPUTER ENGINEERING: CGPA: 9.45 (SEM-II)</span></li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="exp">
+              <!-- Experience -->
+              <ul>
+                <li><span>A Weather Website which uses API granted by openweather to display weather information of any city using JavaScript.</span></li>
+                <li><span>A Simple To-Do List Website using HTML & JavaScript.</span></li>
+                <li><span>Collaborated with a team of 4 to develop and implement a Minesweeper Game
+                written in Java.</span></li>
+                <li><span>Led a team of 6 individuals in SIH Internal Hackathon, coordinating efforts to
+                ensure timely and successful completion.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio -->
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Works</h1>
+        <div class="work-list">
+          <div class="work">
+            <img
+              src="portIMG/Screenshot 2024-08-01 at 9.10.37 PM.png"
+              alt="work1 img"
+            />
+            <div class="layer">
+              <h3>X & O</h3>
+              <p>description of work1</p>
+              <a href="#"><i class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="" alt="work2 img" />
+            <div class="layer">
+              <h3>work2</h3>
+              <p>description of work2</p>
+              <a href="#"><i class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="" alt="work3 img" />
+            <div class="layer">
+              <h3>work3</h3>
+              <p>description of work3</p>
+              <a href="#"><i class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact -->
+
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p>Email</p>
+            <p>Phone</p>
+            <a href="" download class="btn btn2"></a>
+          </div>
+          <div class="contact-right">
+            <form action="">
+              <input type="text" name="Name" placeholder="Your name" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                required
+              />
+              <textarea
+                name="Message"
+                placeholder="Your Message here"
+                rows="6"
+              ></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p>
+      copywrite:
+      <a href="https://www.flaticon.com/free-icons/menu" title="menu icons"
+        >Menu icons created by SeyfDesigner - Flaticon</a
+      >
+      <a href="https://www.flaticon.com/free-icons/close" title="close icons"
+        >Close icons created by Pixel perfect - Flaticon</a
+      >
+    </p>
+
+    <script>
+      let tab_links = document.getElementsByClassName("tab-links");
+      let tab_contents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tab_link of tab_links) {
+          tab_link.classList.remove("active-link");
+        }
+        for (tab_content of tab_contents) {
+          tab_content.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+    <script>
+      let sidemenue = document.getElementById("side-menue");
+      function openmenue() {
+        sidemenue.style.right = "0";
+      }
+      function closemenue() {
+        sidemenue.style.right = "-200";
+      }
+    </script>
+  </body>
+</html>
